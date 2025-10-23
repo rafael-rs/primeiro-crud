@@ -2,9 +2,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!-- Site made with Mobirise Website Builder v6.1.4, https://mobirise.com -->
     <meta charset="UTF-8">
-    <title>{% block title %}Meu Crud{% endblock %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v6.1.4, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/mbr.png') }}" type="image/x-icon">
+    <meta name="description" content="">
+
+    <title>{{ title or "Home" }}</title>
+
+    <!-- CSS principais -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/web/assets/mobirise-icons2/mobirise2.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/dropdown/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/theme/css/style.css') }}">
+
+    <!-- Fontes -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap"
+            as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap">
+    </noscript>
+
+    <!-- CSS adicional -->
+    <link rel="preload" as="style" href="{{ url_for('static', filename='assets/mobirise/css/mbr-additional.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/mobirise/css/mbr-additional.css') }}" type="text/css">
+
+    {% block extra_head %}{% endblock %}
 </head>
+
 <body>
 
     {% with messages = get_flashed_messages() %}
