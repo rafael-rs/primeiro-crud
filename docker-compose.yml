@@ -1,0 +1,9 @@
+services:
+  db:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD= ${DB_ROOT_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - ${VOLUME_HOST}:/var/lib/mysql

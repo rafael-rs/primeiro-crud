@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Gerenciar Conta</h2>
+
+<form method="POST" action="/update">
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome" placeholder="{{ user.nome }}"><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" placeholder="{{ user.email }}"><br><br>
+
+    <label for="idade">Idade:</label><br>
+    <input type="number" id="idade" name="idade" placeholder="{{ user.idade }}"><br><br>
+
+    <button type="submit">Salvar alterações</button>
+</form>
+
+<a href="{{url_for('change_password')}}" style="padding:10px 20px; background-color:#007BFF; color:white; border:none; border-radius:5px; text-decoration:none;">Atualizar senha</a>
+
+<form method="POST" action="/delete" onsubmit="return confirm('Tem certeza que deseja excluir sua conta?');">
+    <button type="submit" style="background-color: red; color: white; margin-top: 20px;">Excluir conta</button>
+</form>
+
+{% endblock %}
