@@ -16,7 +16,8 @@ def login():
     try:
         if request.method == 'POST':
             email = request.form['email']
-            senha = request.form['password']
+            senha = request.form['senha']
+            print(f'{email}\n{senha}')
             user_info = auth.login(email, senha)
             if user_info['id'] is not None:
                 session['user_id'] = user_info['id']
@@ -25,8 +26,8 @@ def login():
             else:
                 flash('Usuario ou senha incorretos')
             return redirect(url_for('home'))
-    except:
-        flash(f'Usuario ou senha incorretos')
+    except Exception as e:
+        flash(f'Erro no processamento: {e}')
         return redirect(url_for('home'))
     
 @app.route('/logout', methods=['GET','POST'])

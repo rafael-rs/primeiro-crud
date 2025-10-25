@@ -17,7 +17,7 @@ def login(user_email, password):
     try:
         query = (table_users.email==user_email)
         senha = db(query).select(table_users.senha).first()
-        if hash:
+        if senha:
             if ph.verify(senha['senha'], password):
                 row = db(query).select(table_users.id, table_users.nome).first()
                 return row
