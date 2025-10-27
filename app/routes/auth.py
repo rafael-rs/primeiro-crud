@@ -74,8 +74,4 @@ def delete(id):
 
     
 if __name__ == '__main__':
-    #create_user('rafael', 'rafael@live', 17, 'essa e a senha')
-    #create_user('kenia', 'kenia@gmail', 20, 'aquela e a senha')
-    #login('rafael@live', 'essa e a senha')
-    user_info = {'id':9, 'nome':'Kera Coletto', 'email':'', 'idade':7, 'senha':''}
-    
+    pass
