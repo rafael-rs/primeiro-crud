@@ -1,24 +1,50 @@
 {% extends "base.html" %}
-{% block content %}
-<h2>Gerenciar Conta</h2>
+{% block extra_head %}
+<body>
+<section data-bs-version="5.1" class="form5 cid-v0jlFJKy6K" id="form02-4">
+    
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 content-head">
+                <div class="mbr-section-head mb-5">
+                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Área do usuario</strong></h3>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 mx-auto mbr-form">
+                <form action="/update" method="POST" class="mbr-form form-with-styler" data-verified="">
+                    <div class="row">
+                        
+                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                            Oops...! some problem!
+                        </div>
+                    </div>
+                    <div class="dragArea row">
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="name">
+                            <input type="text" name="nome" placeholder="{{ user.nome }}" data-form-field="nome" class="form-control" value="" id="name-form02-4">
+                        </div>
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="email">
+                            <input type="email" name="email" placeholder="{{ user.email }}" data-form-field="email" class="form-control" value="" id="email-form02-4">
+                        </div>
+                        <div class="col-12 form-group mb-3" data-for="idade">
+                            <input type="number" name="idade" placeholder="{{ user.idade }}" data-form-field="idade" class="form-control" value="" id="phone-form02-4">
+                        </div>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
+                            <button type="submit" class="btn btn-primary display-7">Salvar alterações</button>
+                        </div>
+                    </div>
+                </form>
+                <a href="{{url_for('change_password')}}" class="btn btn-primary display-7">Atualizar senha</a>
 
-<form method="POST" action="/update">
-    <label for="nome">Nome:</label><br>
-    <input type="text" id="nome" name="nome" placeholder="{{ user.nome }}"><br><br>
-
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" placeholder="{{ user.email }}"><br><br>
-
-    <label for="idade">Idade:</label><br>
-    <input type="number" id="idade" name="idade" placeholder="{{ user.idade }}"><br><br>
-
-    <button type="submit">Salvar alterações</button>
-</form>
-
-<a href="{{url_for('change_password')}}" style="padding:10px 20px; background-color:#007BFF; color:white; border:none; border-radius:5px; text-decoration:none;">Atualizar senha</a>
-
-<form method="POST" action="/delete" onsubmit="return confirm('Tem certeza que deseja excluir sua conta?');">
-    <button type="submit" style="background-color: red; color: white; margin-top: 20px;">Excluir conta</button>
-</form>
-
+                <form method="POST" action="/delete" onsubmit="return confirm('Tem certeza que deseja excluir sua conta?');">
+                    <button type="submit" style="background-color: red; color: white; margin-top: 20px;">Excluir conta</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
 {% endblock %}

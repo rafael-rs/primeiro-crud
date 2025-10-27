@@ -61,7 +61,7 @@ def update():
         return render_template('area_usuario.html', user=user_info_db)
 
     elif request.method == 'POST':      
-        user_request = {'id':session.get('user_id'), 'nome':request.form['nome'], 'email':request.form['email'], 'idade':request.form['idade'], 'senha':request.form['senha']} 
+        user_request = {'id':session.get('user_id'), 'nome':request.form['nome'], 'email':request.form['email'], 'idade':request.form['idade']} 
         updated = auth.update(user_request)
         if updated:
             flash('Informações do usuario atualizadas')
